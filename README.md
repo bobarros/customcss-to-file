@@ -8,13 +8,15 @@
 
 ## :thinking: What is it?
 
-This is a simple function that returns a file with the computed CSS added to an element in any way: inline, classes, ids, etc. \
+This is a simple function that returns a file with the computed CSS added of elements in any way: inline, classes, ids, etc. \
 \
 In some cases, existing solutions were not enough and I was trying to have some fun creating something different. \
 \
-You just have to point some url, the id, or class of an element. \
+You just have to point some url, an array of ids, classes or anything that a querySelectorAll can grab. \
 \
-You will get a CSS file with the custom CSS added to this element. \
+The option null will return everything from document body \
+\
+You will get a CSS file with the custom CSS added the elements. \
 \
 ***Obs:*** *If you're using this, would you be kind to tell me how useful it is to you?*
 
@@ -49,7 +51,6 @@ I'm using Google's website as a placeholder if you just want to test. \
 Replace with your target on getCSS.js, if you will.
 ```
 const targetUrl = "https://www.google.com/";
-const targetElement = "k1zIA"; //id or classname
 ```
 
 Now, just run:
