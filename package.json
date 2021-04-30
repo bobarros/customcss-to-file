@@ -1,0 +1,17 @@
+{
+  "name": "customcss-to-file",
+  "version": "0.1.0",
+  "author": "Bruno Barros <brunobarrosg@ideias.dev>",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobarros/customcss-to-file"
+  },
+  "scripts": {
+    "start": "node getCSS"
+  },
+  "dependencies": {
+    "puppeteer": "^9.0.0"
+  }
+}

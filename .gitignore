@@ -1,0 +1,4 @@
+/node_modules
+/cacheData
+*.css
+*.lock
