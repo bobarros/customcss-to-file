@@ -1,5 +1,5 @@
-const targetUrl = "https://brunobarros.dev";
-const targetElement = "sol"; //id or classname
+const targetUrl = "https://www.google.com/";
+const targetElement = "k1zIA"; //id or classname
 
 ////////////////////////////////////////////////
 
