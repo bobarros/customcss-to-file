@@ -1,3 +1,5 @@
+const includeElements = require("./includeElements");
+const excludeAttributes = require("./excludeAttributes");
 const targetUrl = "https://www.google.com";
 const targetElement = null; //[ids classnames] or null/undefined to get everything
 
@@ -42,9 +44,8 @@ const getTrees = async () => {
   await page.goto(targetUrl);
 
   console.log("Virtual browser started. Wait!");
-  const extractingElements = await page.evaluate((targetElement) => {
+  const extractingElements = await page.evaluate((targetElement, includeElements, excludeAttributes) => {
     ///////////////////////////////////////////////////// First we get all the elements
-
     //////////// Getting element
     let allElements = [];
     let allClasses = [];
@@ -57,27 +58,28 @@ const getTrees = async () => {
         ///starts for i : 001
         for (let i = 0; i < tempElements.length; i++) {
           const tempEl = tempElements[i];
-          const isValid = !(tempEl.tagName === "NOSCRIPT" || tempEl.tagName === "SCRIPT" || tempEl.tagName === "NEXT-ROUTE-ANNOUNCER" || tempEl.tagName === "STYLE");
-          if (isValid)
-            allElements.push(tempEl);
+          if (typeof tempEl.tagName === "string") {
+            const isValid = (includeElements.includes(tempEl.tagName.toLowerCase()));
+            if (isValid) {
+              allElements.push(tempEl);
+            }
+          }
         }
         ///ends for i : 001
-      } else {
+      } else if (targetElement) {
         ///starts for i : 002
         for (let i = 0; i < targetElement.length; i++) {
           const searchInput = targetElement[i];
           const tempElements = d.querySelectorAll(searchInput);
           for (let j = 0; j < tempElements.length; j++) {
             const tempEl = tempElements[j];
-            const isValid = !(tempEl.tagName === "NOSCRIPT" || tempEl.tagName === "SCRIPT" || tempEl.tagName === "NEXT-ROUTE-ANNOUNCER" || tempEl.tagName === "STYLE");
-            if (isValid)
-              allElements.push(tempEl);
+            allElements.push(tempEl);
           }
         }
         ///ends for i : 002
       }
     } catch (error) {
-      return "Error in trying to find all elements."
+      return error.toString();
     }
 
     ///////////////////////////////////////////////////// Now we are going to extract custom css
@@ -116,7 +118,7 @@ const getTrees = async () => {
       ///starts for j : 006
       for (let j = 0; j < targetCSSclean.length; j++) {
         const element = targetCSSclean[j];
-        if (!(targetCSSclean[element] === withCss[i][element]) && !element.includes("webkit")) {
+        if (!(targetCSSclean[element] === withCss[i][element]) && !element.includes(excludeAttributes.find(params => element.includes(params)))) {
           cssTwo = {
             ...cssTwo,
             [element]: withCss[i][element] + "@#$"
@@ -127,7 +129,7 @@ const getTrees = async () => {
 
       //////// Making output look like a css file
       if (JSON.stringify(cssTwo).length > 5) {
-        cssTwo = `.custom_Tag_${target.tagName}_Classes_${target.className.toString().replace(/\s/g, '_')} ${JSON.stringify(cssTwo)
+        cssTwo = `.custom_TAG_${target.tagName.toLowerCase()}_CLASSESorIDS_${target.className.toString().replace(/\s/g, '_')} ${JSON.stringify(cssTwo)
           .replace(/"|\\/g, " ")
           .replace(/@#\$ ,/g, ";\n")
           .replace("\{", "\{\n")
@@ -143,7 +145,7 @@ const getTrees = async () => {
 
     //////// returning the file from puppeteer
     return allClasses.flat().toString().replace(/\},\./g, "}\n\n.");
-  }, targetElement);
+  }, targetElement, includeElements, excludeAttributes);
 
   //////// closes virtual browser
   console.log("Closing virtual browser");

@@ -8,7 +8,7 @@
 
 ## :thinking: What is it?
 
-This is a simple function that returns a file with the computed CSS added of elements in any way: inline, classes, ids, etc. \
+This is function that returns a file with the computed CSS added of elements in any way: inline, classes, ids, etc. \
 \
 In some cases, existing solutions were not enough and I was trying to have some fun creating something different. \
 \
@@ -16,7 +16,9 @@ You just have to point some url, an array of ids, classes or anything that a que
 \
 The option null will return everything from document body \
 \
-You will get a CSS file with the custom CSS added the elements. \
+You have one file to include elements that you want and one to exclude attributes \
+\
+By the end, the result is a CSS file with the custom CSS added to all elements selected. \
 \
 ***Obs:*** *If you're using this, would you be kind to tell me how useful it is to you?*
 
