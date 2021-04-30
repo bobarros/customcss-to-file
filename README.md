@@ -45,7 +45,7 @@ npm install
 
 ### Step 3: Editing variables or not
 
-I'm using Google's website as a placeholder if you just want to test. /
+I'm using Google's website as a placeholder if you just want to test. \
 Replace with your target on getCSS.js, if you will.
 ```
 const targetUrl = "https://www.google.com/";
