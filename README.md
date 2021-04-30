@@ -68,6 +68,4 @@ node getCSS.js
 
 Feel free to tell me about errors or improvements.
 
-## :hugs: Reach me
-
-I wish you all the best!
+I wish you all the best! :hugs:
