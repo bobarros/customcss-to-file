@@ -52,7 +52,7 @@ const targetUrl = "https://www.google.com/";
 const targetElement = "k1zIA"; //id or classname
 ```
 
-Now, jus execute it:
+Now, just run:
 
 ```
 yarn start
