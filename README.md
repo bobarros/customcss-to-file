@@ -6,11 +6,19 @@
 <h3 align="center">:wave: Hi! I'm Bruno Barros</h2>
 <p align="center">A Web Developer</p>
 
-*Obs: If you're using this, would you be kind to tell me how useful it is to you?*
+## :thinking: What is it?
+
+This is a simple function that returns a file with the computed CSS added to an element with ids or classes. \
+\
+In some cases, existing solutions were not enough and I was trying to have some fun creating something different. \
+\
+You just have to point some url, the id, or class of an element. \
+\
+You will get a CSS file with the custom CSS added to this element. \
+\
+***Obs:*** *If you're using this, would you be kind to tell me how useful it is to you?*
 
 ## :rocket: Quick start
-
-**Running the function locally**
 
 ### Step 1: Clone The Repo
 
