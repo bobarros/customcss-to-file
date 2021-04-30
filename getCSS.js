@@ -1,5 +1,5 @@
-const targetUrl = "https://www.google.com/";
-const targetElement = "k1zIA"; //id or classname
+const targetUrl = "https://brunobarros.dev";
+const targetElement = "sol"; //id or classname
 
 ////////////////////////////////////////////////
 
@@ -56,9 +56,10 @@ const getTrees = async () => {
         };
       }
 
-      //////// Saving css computed without classes
-      target.removeAttribute("class");
-      target.removeAttribute("id");
+      //////// Delete all custom css
+      document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove());
+
+      //////// Saving standard css for comparison
       const targetCSSclean = window.getComputedStyle(target);
       let cssTwo = {};
 

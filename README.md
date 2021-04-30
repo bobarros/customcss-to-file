@@ -8,7 +8,7 @@
 
 ## :thinking: What is it?
 
-This is a simple function that returns a file with the computed CSS added to an element with ids or classes. \
+This is a simple function that returns a file with the computed CSS added to an element in any way: inline, classes, ids, etc. \
 \
 In some cases, existing solutions were not enough and I was trying to have some fun creating something different. \
 \
