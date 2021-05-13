@@ -1,6 +1,6 @@
 const includeElements = require("./includeElements");
 const excludeAttributes = require("./excludeAttributes");
-const targetUrl = "https://www.google.com";
+const targetUrl = "https://gregives.co.uk/";
 const targetElement = null; //[ids classnames] or null/undefined to get everything
 
 //// desktop version, but you can choose as you please

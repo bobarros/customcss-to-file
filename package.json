@@ -9,7 +9,8 @@
     "url": "https://github.com/bobarros/customcss-to-file"
   },
   "scripts": {
-    "start": "node getCSS"
+    "start": "node getCSS",
+    "screen": "node screenshotsFront"
   },
   "dependencies": {
     "puppeteer": "^9.0.0"

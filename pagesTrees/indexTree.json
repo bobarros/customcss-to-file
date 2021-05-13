@@ -1,0 +1,46 @@
+[
+  {
+    "width": 1440,
+    "height": 1688,
+    "left": 0,
+    "children": [
+      {
+        "width": 518,
+        "height": 432,
+        "left": 461
+      },
+      {
+        "width": 1440,
+        "height": 658,
+        "left": 0
+      },
+      {
+        "width": 1440,
+        "height": 598,
+        "left": 0
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 489,
+    "left": 0,
+    "children": [
+      {
+        "width": 1440,
+        "height": 243,
+        "left": 0
+      },
+      {
+        "width": 1440,
+        "height": 60,
+        "left": 0
+      },
+      {
+        "width": 1080,
+        "height": 78,
+        "left": 180
+      }
+    ]
+  }
+]
